@@ -10,7 +10,7 @@ const Features = create_ssr_component(($$result, $$props, $$bindings, slots) => 
     $$bindings.projects(projects);
   $$result.css.add(css);
   return `<div class="${"featured svelte-7qg5e4"}">${each(projects, (project) => {
-    return `<div class="${"project-card svelte-7qg5e4"}" style="${"--projectTilt:" + escape(project.tilt, true) + "; --offsetTop:" + escape(project.top, true) + "; --offsetLeft:" + escape(project.left, true) + "; --mobileTop:" + escape(project.mobileTop, true) + "; --mobileLeft:" + escape(project.mobileLeft, true) + ";"}"><div class="${"card svelte-7qg5e4"}"><div class="${"image svelte-7qg5e4"}"><img${add_attribute("src", project.src, 0)}${add_attribute("alt", project.alt, 0)} class="${"svelte-7qg5e4"}"></div>
+    return `<div class="${"project-card svelte-7qg5e4"}" style="${"--projectTilt:" + escape(project.tilt, true) + "; --offsetTop:" + escape(project.top, true) + "; --offsetLeft:" + escape(project.left, true) + "; --mobileTop:" + escape(project.mobileTop, true) + "; --mobileLeft:" + escape(project.mobileLeft, true) + ";"}"><div class="${"card svelte-7qg5e4"}"><div class="${"image svelte-7qg5e4"}"><a${add_attribute("href", project.link, 0)} class="${"img-link"}"><img${add_attribute("src", project.src, 0)}${add_attribute("alt", project.alt, 0)} class="${"svelte-7qg5e4"}"></a></div>
         <div class="${"copy svelte-7qg5e4"}"><p class="${"svelte-7qg5e4"}">${escape(project.copy)}</p>
           <p class="${"svelte-7qg5e4"}"><a class="${"slink"}"${add_attribute("href", project.link, 0)}>View project \xBB</a></p>
         </div></div>

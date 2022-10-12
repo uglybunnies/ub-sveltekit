@@ -5,8 +5,9 @@ import adapter from '@sveltejs/adapter-static';
 const config = {
   kit: {
     adapter: adapter({
-      precompress: true
+      precompress: true,
     }),
-  }
+    trailingSlash: 'always'
+  },
 }
 export default config;

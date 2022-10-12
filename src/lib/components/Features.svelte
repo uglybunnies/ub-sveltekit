@@ -2,7 +2,9 @@
   export let projects;
   
   function showCard(event) {
+    console.log(event);
     let target = event.target;
+    console.log(target);  
     let card = target.closest('.card');
     let shown = document.querySelector('.show');
     if (card.classList.contains('show')) {
@@ -21,7 +23,7 @@
   {#each projects as project}
     <div class="project-card" style="--projectTilt:{project.tilt}; --offsetTop:{project.top}; --offsetLeft:{project.left}; --mobileTop:{project.mobileTop}; --mobileLeft:{project.mobileLeft};">
       <div class="card" on:click={showCard} >
-        <div class="image"><img src="{project.src}" alt="{project.alt}"></div>
+        <div class="image"><a href="{project.link}" class="img-link" on:click|preventDefault><img src="{project.src}" alt="{project.alt}"></a></div>
         <div class="copy">
           <p>{project.copy}</p>
           <p><a class="slink" href="{project.link}">View project &raquo;</a></p>
