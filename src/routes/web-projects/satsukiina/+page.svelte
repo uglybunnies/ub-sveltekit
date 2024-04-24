@@ -14,7 +14,8 @@
         mobileLeft: '-1%',
         cardHeightRatio: '0.909375',
         cardWidth: '16rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/satsukiina/images#pic1'
 
      },
       {
@@ -29,7 +30,8 @@
         mobileLeft: '20%',
         cardHeightRatio: '0.692969',
         cardWidth: '18rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/satsukiina/images#pic2'
      },
       {
         src: '/assets/web-projects/satsuki-home-footer.png',
@@ -43,7 +45,8 @@
         mobileLeft: '40%',
         cardHeightRatio: '0.6515625',
         cardWidth: '18rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/satsukiina/images#pic3'
      },
       {
         src: '/assets/web-projects/SatsukiMobileHome.png',
@@ -57,7 +60,8 @@
         mobileLeft: '60%',
         cardHeightRatio: '1',
         cardWidth: '15rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/satsukiina/images#pic1'
      },
       {
         src: '/assets/web-projects/satsuki-landing.png',
@@ -71,7 +75,8 @@
         mobileLeft: '20%',
         cardHeightRatio: '0.75',
         cardWidth: '18rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/satsukiina/images#pic4'
      },
       {
         src: '/assets/web-projects/satsuki-mob-topnav.png',
@@ -86,7 +91,8 @@
         mobileTilt: '-3',
         cardHeightRatio: '1',
         cardWidth: '15rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/satsukiina/images#pic4'
      },
     ],
     copy: [

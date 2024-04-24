@@ -15,7 +15,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "-1%",
         cardHeightRatio: "0.9575",
         cardWidth: "16rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/smcta/images#pic1"
       },
       {
         src: "/assets/web-projects/smcta-content-page.png",
@@ -29,7 +30,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "25%",
         cardHeightRatio: "0.9575",
         cardWidth: "16rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/smcta/images#pic2"
       },
       {
         src: "/assets/web-projects/smcta-live-homepage.png",
@@ -43,7 +45,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "55%",
         cardHeightRatio: "0.92396",
         cardWidth: "16rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/smcta/images#pic3"
       },
       {
         src: "/assets/web-projects/smcta-homepage-detail.png",
@@ -57,7 +60,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "50%",
         cardHeightRatio: "0.61875",
         cardWidth: "16rem",
-        maxWidth: "42rem"
+        maxWidth: "42rem",
+        staticImgUrl: "/web-projects/smcta/images#pic4"
       },
       {
         src: "/assets/web-projects/smcta-nav-detail.png",
@@ -71,7 +75,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "5%",
         cardHeightRatio: "0.619130435",
         cardWidth: "14rem",
-        maxWidth: "38rem"
+        maxWidth: "38rem",
+        staticImgUrl: "/web-projects/smcta/images#pic4"
       }
     ],
     copy: [
@@ -81,7 +86,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   } } = $$props;
   if ($$props.captionBoxData === void 0 && $$bindings.captionBoxData && captionBoxData !== void 0)
     $$bindings.captionBoxData(captionBoxData);
-  return `${$$result.head += `${$$result.title = `<title>Ugly Bunnies\u2014San Mateo County Transit Authority Website</title>`, ""}`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-c8snol_START -->${$$result.title = `<title>Ugly Bunnies\u2014San Mateo County Transit Authority Website</title>`, ""}<!-- HEAD_svelte-c8snol_END -->`, ""}
 <article class="${"project"}"><header><h2>SMCTA Website</h2>
     <p>This design was created on behalf of the San Mateo County Transit Authority. It was the highest profile site I had designed up to that point. The seven years it was in production makes this site one of my most enduring designs.</p></header>
   <section class="${"design"}"><header><h3>The Design</h3></header>

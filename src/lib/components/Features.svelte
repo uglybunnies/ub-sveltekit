@@ -2,9 +2,7 @@
   export let projects;
   
   function showCard(event) {
-    console.log(event);
     let target = event.target;
-    console.log(target);  
     let card = target.closest('.card');
     let shown = document.querySelector('.show');
     if (card.classList.contains('show')) {

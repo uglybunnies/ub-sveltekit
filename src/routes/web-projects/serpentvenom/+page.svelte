@@ -14,7 +14,8 @@
         mobileLeft: '-1%',
         cardHeightRatio: '.75',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/serpentvenom/images#pic1'
       },
       {
         src: '/assets/web-projects/sv_detail8.png',
@@ -28,7 +29,8 @@
         mobileLeft: '20%',
         cardHeightRatio: '.75',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/serpentvenom/images#pic2'
       },
       {
         src: '/assets/web-projects/sv_detail1.png',
@@ -43,6 +45,7 @@
         cardHeightRatio: '0.61719',
         cardWidth: '12em',
         maxWidth: '40rem',
+        staticImgUrl: '/web-projects/serpentvenom/images#pic3'
       },
       {
         src: '/assets/web-projects/sv_detail6.png',
@@ -56,7 +59,8 @@
         mobileLeft: '60%',
         cardHeightRatio: '.75',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/serpentvenom/images#pic4'
       },
       {
         src: '/assets/web-projects/sv_detail2.png',
@@ -71,6 +75,7 @@
         cardHeightRatio: '0.61719',
         cardWidth: '12em',
         maxWidth: '40rem',
+        staticImgUrl: '/web-projects/serpentvenom/images#pic5'
       },
       {
         src: '/assets/web-projects/sv_detail3.png',
@@ -85,6 +90,7 @@
         cardHeightRatio: '0.61719',
         cardWidth: '12em',
         maxWidth: '40rem',
+        staticImgUrl: '/web-projects/serpentvenom/images#pic6'
       },
       {
         src: '/assets/web-projects/sv_detail4.png',
@@ -100,6 +106,7 @@
         cardHeightRatio: '0.61719',
         cardWidth: '12em',
         maxWidth: '40rem',
+        staticImgUrl: '/web-projects/serpentvenom/images#pic7'
       },
     ],
     copy: [

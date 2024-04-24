@@ -57,7 +57,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let row2 = {
     projects: [
       {
-        copy: "This site was designed Platzner & Co.",
+        copy: "This site was designed for Platzner & Co.",
         tilt: "7deg",
         top: ".5em",
         left: "1%",
@@ -102,15 +102,48 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
       }
     ]
   };
+  let irow1 = {
+    projects: [
+      {
+        copy: "User interface development for the Corelight website.",
+        tilt: "-7deg",
+        top: ".5em",
+        left: "1%",
+        src: "/assets/web-projects/corelight.png",
+        alt: "Corelight website",
+        link: "/web-projects/corelight"
+      },
+      {
+        copy: "User interace development for the Molekule e-commerce website.",
+        tilt: "5deg",
+        top: "1em",
+        left: "20%",
+        src: "/assets/web-projects/molekule.png",
+        alt: "Molekule website",
+        link: "/web-projects/molekule"
+      },
+      {
+        copy: "User interface development for Credit Karma.",
+        tilt: "-3deg",
+        top: "-.25em",
+        left: "40%",
+        src: "/assets/web-projects/CF-InfoTop.png",
+        alt: "Credit Karma Credit Fumble Infographic page.",
+        link: "/web-projects/credit-karma"
+      }
+    ]
+  };
   $$result.css.add(css);
-  return `${$$result.head += `${$$result.title = `<title>Ugly Bunnies\u2014Web Projects</title>`, ""}`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-1em2ce8_START -->${$$result.title = `<title>Ugly Bunnies\u2014Web Projects</title>`, ""}<!-- HEAD_svelte-1em2ce8_END -->`, ""}
 <article class="${"projects svelte-9x8bxo"}"><header><h2>Web Projects</h2>
-    <p>I&#39;ve been a web professional for quite a while and have done a variety of projects throughout my career. Here are some projects I&#39;ve worked on.</p></header>
+    <p>I&#39;ve been a web professional for quite a while and have done a variety of projects throughout my career. Here are some of these projects.</p></header>
+  <section class="${"sites svelte-9x8bxo"}"><h3>User Interface Development</h3>
+      <p>Here are some user interface projects I developed for companies I have worked for.</p>
+      <div class="${"websites decorate-shift svelte-9x8bxo"}">${validate_component(Features, "Features").$$render($$result, Object.assign(irow1), {}, {})}</div></section>
   <section class="${"sites svelte-9x8bxo"}"><h3>Websites</h3>
-    <p>This is a collection of some the websites I designed and developed over the course of my career.</p>
+    <p>This is a collection of some websites I designed and developed over the course of my career.</p>
     <div class="${"websites decorate svelte-9x8bxo"}">${validate_component(Features, "Features").$$render($$result, Object.assign(row1), {}, {})}</div>
     <div class="${"websites decorate-shift svelte-9x8bxo"}">${validate_component(Features, "Features").$$render($$result, Object.assign(row2), {}, {})}</div></section>
-  
 </article>`;
 });
 export {

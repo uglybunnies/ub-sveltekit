@@ -15,7 +15,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "-1%",
         cardHeightRatio: ".75",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/serpentvenom/images#pic1"
       },
       {
         src: "/assets/web-projects/sv_detail8.png",
@@ -29,7 +30,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "20%",
         cardHeightRatio: ".75",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/serpentvenom/images#pic2"
       },
       {
         src: "/assets/web-projects/sv_detail1.png",
@@ -43,7 +45,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "40%",
         cardHeightRatio: "0.61719",
         cardWidth: "12em",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/serpentvenom/images#pic3"
       },
       {
         src: "/assets/web-projects/sv_detail6.png",
@@ -57,7 +60,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "60%",
         cardHeightRatio: ".75",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/serpentvenom/images#pic4"
       },
       {
         src: "/assets/web-projects/sv_detail2.png",
@@ -71,7 +75,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "1%",
         cardHeightRatio: "0.61719",
         cardWidth: "12em",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/serpentvenom/images#pic5"
       },
       {
         src: "/assets/web-projects/sv_detail3.png",
@@ -85,7 +90,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "25%",
         cardHeightRatio: "0.61719",
         cardWidth: "12em",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/serpentvenom/images#pic6"
       },
       {
         src: "/assets/web-projects/sv_detail4.png",
@@ -100,7 +106,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileTilt: "3",
         cardHeightRatio: "0.61719",
         cardWidth: "12em",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/serpentvenom/images#pic7"
       }
     ],
     copy: [
@@ -110,7 +117,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   } } = $$props;
   if ($$props.captionBoxData === void 0 && $$bindings.captionBoxData && captionBoxData !== void 0)
     $$bindings.captionBoxData(captionBoxData);
-  return `${$$result.head += `${$$result.title = `<title>Ugly Bunnies\u2014SerpentVenom Website Design Overview</title>`, ""}`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-1yukpsw_START -->${$$result.title = `<title>Ugly Bunnies\u2014SerpentVenom Website Design Overview</title>`, ""}<!-- HEAD_svelte-1yukpsw_END -->`, ""}
 
 <article class="${"project"}"><header><h2>SerpentVenom</h2>
     <p>This is the third and final design of my former website, SerpentVenom. SerpentVenom featured my art and design portfolios as well as my blog and some articles I had written. I retired the site when I realized I had not updated the blog in over a year.</p></header>

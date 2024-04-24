@@ -16,7 +16,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileTilt: "3",
         cardHeightRatio: "1.16016",
         cardWidth: "16rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/platinum/images#pic1"
       },
       {
         src: "/assets/web-projects/platinum_home_detail1.png",
@@ -31,7 +32,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileTilt: "3",
         cardHeightRatio: "0.609375",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/platinum/images#pic2"
       },
       {
         src: "/assets/web-projects/platinum_hero.png",
@@ -46,7 +48,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileTilt: "3",
         cardHeightRatio: "0.61875",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/platinum/images#pic3"
       },
       {
         src: "/assets/web-projects/platinum_services.png",
@@ -61,7 +64,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileTilt: "3",
         cardHeightRatio: "0.80859375",
         cardWidth: "16rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/platinum/images#pic4"
       },
       {
         src: "/assets/web-projects/platinum_home_detail2.png",
@@ -76,7 +80,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileTilt: "50",
         cardHeightRatio: "0.61875",
         cardWidth: "14rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/platinum/images#pic5"
       },
       {
         src: "/assets/web-projects/platinum-contact.png",
@@ -91,7 +96,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileTilt: "3",
         cardHeightRatio: "0.78711",
         cardWidth: "14rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/platinum/images#pic6"
       }
     ],
     copy: [
@@ -101,7 +107,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   } } = $$props;
   if ($$props.captionBoxData === void 0 && $$bindings.captionBoxData && captionBoxData !== void 0)
     $$bindings.captionBoxData(captionBoxData);
-  return `${$$result.head += `${$$result.title = `<title>Ugly Bunnies\u2014Platinum Medical Spa Website Design</title>`, ""}`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-1d7h2zy_START -->${$$result.title = `<title>Ugly Bunnies\u2014Platinum Medical Spa Website Design</title>`, ""}<!-- HEAD_svelte-1d7h2zy_END -->`, ""}
 
 <article class="${"project"}"><header><h2>Platinum Medical Spa</h2>
     <p>This site was the first created in collaboration with my colleague who was attempting to build a business around creating websites optimized for <a class="${"slink"}" href="${"https://en.wikipedia.org/wiki/Search_engine_optimization"}">SEO</a>. Click on each screenshot to enlarge them. The project was released and the design remained active for about a year before it was replace with a Flash-based site that killed all the SEO value we had built.</p></header>

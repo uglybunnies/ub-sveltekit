@@ -118,7 +118,15 @@ function negotiate(accept, types) {
   }
   return accepted;
 }
-const DATA_SUFFIX = "/__data.js";
+function is_content_type(request, ...types) {
+  var _a;
+  const type = ((_a = request.headers.get("content-type")) == null ? void 0 : _a.split(";", 1)[0].trim()) ?? "";
+  return types.includes(type);
+}
+function is_form_content_type(request) {
+  return is_content_type(request, "application/x-www-form-urlencoded", "multipart/form-data");
+}
+const DATA_SUFFIX = "/__data.json";
 function check_method_names(mod) {
   ["get", "post", "put", "patch", "del"].forEach((m) => {
     if (m in mod) {
@@ -150,18 +158,18 @@ function allowed_methods(mod) {
     allowed.push("HEAD");
   return allowed;
 }
-function data_response(data) {
+function data_response(data, event) {
   const headers = {
-    "content-type": "application/javascript",
+    "content-type": "application/json",
     "cache-control": "private, no-store"
   };
   try {
-    return new Response(`window.__sveltekit_data = ${devalue.uneval(data)}`, { headers });
+    return new Response(devalue.stringify(data), { headers });
   } catch (e) {
     const error2 = e;
     const match = /\[(\d+)\]\.data\.(.+)/.exec(error2.path);
-    const message = match ? `${error2.message} (data.${match[2]})` : error2.message;
-    return new Response(`throw new Error(${JSON.stringify(message)})`, { headers });
+    const message = match ? `Data returned from \`load\` while rendering /${event.routeId} is not serializable: ${error2.message} (data.${match[2]})` : error2.message;
+    return new Response(JSON.stringify(message), { headers, status: 500 });
   }
 }
 function get_option(nodes, option) {
@@ -318,19 +326,19 @@ async function handle_action_json_request(event, options, server) {
         location: error2.location
       });
     }
-    if (!(error2 instanceof HttpError)) {
-      options.handle_error(error2, event);
-    }
     return action_json(
       {
         type: "error",
-        error: handle_error_and_jsonify(event, options, error2)
+        error: handle_error_and_jsonify(event, options, check_incorrect_invalid_use(error2))
       },
       {
         status: error2 instanceof HttpError ? error2.status : 500
       }
     );
   }
+}
+function check_incorrect_invalid_use(error2) {
+  return error2 instanceof ValidationError ? new Error(`Cannot "throw invalid()". Use "return invalid()"`) : error2;
 }
 function action_json(data, init2) {
   return json(data, init2);
@@ -371,7 +379,10 @@ async function handle_action_request(event, server) {
         location: error2.location
       };
     }
-    return { type: "error", error: error2 };
+    return {
+      type: "error",
+      error: check_incorrect_invalid_use(error2)
+    };
   }
 }
 function check_named_default_separate(actions) {
@@ -382,7 +393,6 @@ function check_named_default_separate(actions) {
   }
 }
 async function call_action(event, actions) {
-  var _a;
   const url = new URL(event.request.url);
   let name = "default";
   for (const param of url.searchParams) {
@@ -398,9 +408,10 @@ async function call_action(event, actions) {
   if (!action) {
     throw new Error(`No action with name '${name}' found`);
   }
-  const type = (_a = event.request.headers.get("content-type")) == null ? void 0 : _a.split("; ")[0];
-  if (type !== "application/x-www-form-urlencoded" && type !== "multipart/form-data") {
-    throw new Error(`Actions expect form-encoded data (received ${type})`);
+  if (!is_form_content_type(event.request)) {
+    throw new Error(
+      `Actions expect form-encoded data (received ${event.request.headers.get("content-type")}`
+    );
   }
   return action(event);
 }
@@ -434,7 +445,9 @@ function check_serializability(value, id, path) {
       return;
     }
   }
-  throw new Error(`${path} returned from action in ${id} cannot be serialized as JSON`);
+  throw new Error(
+    `${path} returned from action in ${id} cannot be serialized as JSON without losing its original type` + (value instanceof Date ? " (Date objects are serialized as strings)" : "")
+  );
 }
 function normalize_path(path, trailing_slash) {
   if (path === "/" || trailing_slash === "ignore")
@@ -1148,8 +1161,11 @@ async function render_response({
   } catch (e) {
     const error3 = e;
     const match = /\[(\d+)\]\.data\.(.+)/.exec(error3.path);
-    if (match)
-      throw new Error(`${error3.message} (data.${match[2]})`);
+    if (match) {
+      throw new Error(
+        `Data returned from \`load\` while rendering /${event.routeId} is not serializable: ${error3.message} (data.${match[2]})`
+      );
+    }
     throw error3;
   }
   if (form_value) {
@@ -1478,10 +1494,10 @@ async function render_page(event, route, page, options, state, resolve_opts) {
           const err = normalize_error(e);
           if (err instanceof Redirect) {
             if (state.prerendering && should_prerender_data) {
-              const body = `window.__sveltekit_data = ${JSON.stringify({
+              const body = devalue.stringify({
                 type: "redirect",
                 location: err.location
-              })}`;
+              });
               state.prerendering.dependencies.set(data_pathname, {
                 response: new Response(body),
                 body
@@ -1522,10 +1538,10 @@ async function render_page(event, route, page, options, state, resolve_opts) {
       }
     }
     if (state.prerendering && should_prerender_data) {
-      const body = `window.__sveltekit_data = ${devalue.uneval({
+      const body = devalue.stringify({
         type: "data",
         nodes: branch.map((branch_node) => branch_node == null ? void 0 : branch_node.server_data)
-      })}`;
+      });
       state.prerendering.dependencies.set(data_pathname, {
         response: new Response(body),
         body
@@ -1593,15 +1609,13 @@ async function render_data(event, route, options, state) {
   }
   try {
     const node_ids = [...route.page.layouts, route.page.leaf];
-    const invalidated = ((_a = event.url.searchParams.get("__invalid")) == null ? void 0 : _a.split("").map((x) => x === "y")) ?? node_ids.map(() => true);
+    const invalidated = ((_a = event.request.headers.get("x-sveltekit-invalidated")) == null ? void 0 : _a.split(",").map(Boolean)) ?? node_ids.map(() => true);
     let aborted = false;
     const url = new URL(event.url);
     url.pathname = normalize_path(
       url.pathname.slice(0, -DATA_SUFFIX.length),
       options.trailing_slash
     );
-    url.searchParams.delete("__invalid");
-    url.searchParams.delete("__id");
     const new_event = { ...event, url };
     const functions = node_ids.map((n, i) => {
       return once(async () => {
@@ -1661,7 +1675,7 @@ async function render_data(event, route, options, state) {
       type: "data",
       nodes: nodes.slice(0, length)
     };
-    return data_response(server_data);
+    return data_response(server_data, event);
   } catch (e) {
     const error2 = normalize_error(e);
     if (error2 instanceof Redirect) {
@@ -1669,9 +1683,9 @@ async function render_data(event, route, options, state) {
         type: "redirect",
         location: error2.location
       };
-      return data_response(server_data);
+      return data_response(server_data, event);
     } else {
-      return data_response(handle_error_and_jsonify(event, options, error2));
+      return data_response(handle_error_and_jsonify(event, options, error2), event);
     }
   }
 }
@@ -1869,11 +1883,10 @@ function normalize_fetch_input(info, init2, url) {
 const default_transform = ({ html }) => html;
 const default_filter = () => false;
 async function respond(request, options, state) {
-  var _a, _b, _c, _d;
+  var _a, _b, _c;
   let url = new URL(request.url);
   if (options.csrf.check_origin) {
-    const type = (_a = request.headers.get("content-type")) == null ? void 0 : _a.split(";")[0];
-    const forbidden = request.method === "POST" && request.headers.get("origin") !== url.origin && (type === "application/x-www-form-urlencoded" || type === "multipart/form-data");
+    const forbidden = request.method === "POST" && request.headers.get("origin") !== url.origin && is_form_content_type(request);
     if (forbidden) {
       return new Response(`Cross-site ${request.method} form submissions are forbidden`, {
         status: 403
@@ -1888,7 +1901,7 @@ async function respond(request, options, state) {
   }
   let route = null;
   let params = {};
-  if (options.paths.base && !((_b = state.prerendering) == null ? void 0 : _b.fallback)) {
+  if (options.paths.base && !((_a = state.prerendering) == null ? void 0 : _a.fallback)) {
     if (!decoded.startsWith(options.paths.base)) {
       return new Response("Not found", { status: 404 });
     }
@@ -1897,7 +1910,7 @@ async function respond(request, options, state) {
   const is_data_request = decoded.endsWith(DATA_SUFFIX);
   if (is_data_request)
     decoded = decoded.slice(0, -DATA_SUFFIX.length) || "/";
-  if (!((_c = state.prerendering) == null ? void 0 : _c.fallback)) {
+  if (!((_b = state.prerendering) == null ? void 0 : _b.fallback)) {
     const matchers = await options.manifest._.matchers();
     for (const candidate of options.manifest._.routes) {
       const match = candidate.pattern.exec(decoded);
@@ -1913,7 +1926,7 @@ async function respond(request, options, state) {
   }
   if ((route == null ? void 0 : route.page) && !is_data_request) {
     const normalized = normalize_path(url.pathname, options.trailing_slash);
-    if (normalized !== url.pathname && !((_d = state.prerendering) == null ? void 0 : _d.fallback)) {
+    if (normalized !== url.pathname && !((_c = state.prerendering) == null ? void 0 : _c.fallback)) {
       return new Response(void 0, {
         status: 301,
         headers: {
@@ -2092,7 +2105,14 @@ async function respond(request, options, state) {
       const etag = response.headers.get("etag");
       if (if_none_match_value === etag) {
         const headers2 = new Headers({ etag });
-        for (const key2 of ["cache-control", "content-location", "date", "expires", "vary"]) {
+        for (const key2 of [
+          "cache-control",
+          "content-location",
+          "date",
+          "expires",
+          "vary",
+          "set-cookie"
+        ]) {
           const value = response.headers.get(key2);
           if (value)
             headers2.set(key2, value);
@@ -2115,7 +2135,7 @@ function set_paths(paths) {
   base = paths.base;
   assets = paths.assets || base;
 }
-const app_template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width" />\n    <meta name="description" content="Ugly Bunnies features engaging web-based experiences created by Michael Wong. Michael is an artist and web professional based in the San Francisco Bay Area.">\n    <meta name="author" content="Michael Wong">\n		' + head + '\n    <link rel="icon" href="/favicon.ico" sizes="any"><!-- 32\xD732 -->\n    <link rel="icon" href="/icon.svg" type="image/svg+xml">\n    <link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180\xD7180 -->\n    <link rel="preconnect" href="https://fonts.googleapis.com">\n    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;1,400;1,500&family=Henny+Penny&text=Ugly%20Bunies&display=swap" rel="stylesheet" media="screen">\n    <link rel="stylesheet" href="/assets/screen.css" media="screen">\n    <link rel="stylesheet" href="/assets/print.css" media="print">\n	</head>\n	<body>\n		<div id="sveltekit" class="body-wrap">' + body + "</div>\n	</body>\n</html>\n";
+const app_template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width" />\n    <meta name="description" content="Ugly Bunnies features engaging web-based experiences created by Michael Wong. Michael is an artist and web professional based in the San Francisco Bay Area.">\n    <meta name="author" content="Michael Wong">\n		' + head + '\n    <link rel="icon" href="/favicon.ico" sizes="any"><!-- 32\xD732 -->\n    <link rel="icon" href="/icon.svg" type="image/svg+xml">\n    <link rel="apple-touch-icon" href="/apple-touch-icon.png"><!-- 180\xD7180 -->\n    <link rel="preconnect" href="https://fonts.googleapis.com">\n    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap&family=Henny+Penny&text=Ugly%20Bunies&display=swap" rel="stylesheet" media="screen">\n    <link rel="stylesheet" href="/assets/screen.css" media="screen">\n    <link rel="stylesheet" href="/assets/print.css" media="print">\n	</head>\n	<body>\n		<div id="sveltekit" class="body-wrap">' + body + "</div>\n	</body>\n</html>\n";
 const error_template = ({ status, message }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>

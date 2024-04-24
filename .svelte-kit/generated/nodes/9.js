@@ -1,1 +1,1 @@
-export { default as component } from "../../../src/routes/web-projects/satsukiina/+page.svelte";
+export { default as component } from "../../../src/routes/web-projects/credit-karma/+page.svelte";

@@ -15,7 +15,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "-1%",
         cardHeightRatio: "0.6175",
         cardWidth: "16rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/urban-forest/images#pic1"
       },
       {
         src: "/assets/web-projects/UF_detail4.png",
@@ -29,7 +30,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "25%",
         cardHeightRatio: "1.024324324",
         cardWidth: "16rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/urban-forest/images#pic2"
       },
       {
         src: "/assets/web-projects/UF_detail5.png",
@@ -43,7 +45,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "44%",
         cardHeightRatio: "1.02442",
         cardWidth: "16rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/urban-forest/images#pic3"
       },
       {
         src: "/assets/web-projects/UF_detail6.png",
@@ -57,7 +60,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "55%",
         cardHeightRatio: "1.02432",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/urban-forest/images#pic4"
       }
     ],
     copy: [
@@ -67,7 +71,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   } } = $$props;
   if ($$props.captionBoxData === void 0 && $$bindings.captionBoxData && captionBoxData !== void 0)
     $$bindings.captionBoxData(captionBoxData);
-  return `${$$result.head += `${$$result.title = `<title>Ugly Bunnies\u2014Urban Forest: Theme Design for Sandvox</title>`, ""}`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-1ym0wt6_START -->${$$result.title = `<title>Ugly Bunnies\u2014Urban Forest: Theme Design for Sandvox</title>`, ""}<!-- HEAD_svelte-1ym0wt6_END -->`, ""}
 <article class="${"project"}"><header><h2>Urban Forest: Theme Design for Sandvox</h2>
     <p>Sandvox drew inspiration from the <a href="${"http://www.csszengarden.com/"}">CSS Zen Garden</a> and created one set of templates composed of the same markup structure and just &quot;skinned&quot; it with CSS. This is the Urban Forest theme I designed for them. This design has proven to be the most enduring design I have done. The design is still used in production by several websites (including <a href="${"http://luckydogcambridge.com/"}">this one</a> for example).</p></header>
   <section class="${"design"}"><header><h3>The Design</h3></header>

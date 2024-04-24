@@ -12,7 +12,19 @@ export { matchers } from './client-matchers.js';
 	() => import('./nodes/9'),
 	() => import('./nodes/10'),
 	() => import('./nodes/11'),
-	() => import('./nodes/12')];
+	() => import('./nodes/12'),
+	() => import('./nodes/13'),
+	() => import('./nodes/14'),
+	() => import('./nodes/15'),
+	() => import('./nodes/16'),
+	() => import('./nodes/17'),
+	() => import('./nodes/18'),
+	() => import('./nodes/19'),
+	() => import('./nodes/20'),
+	() => import('./nodes/21'),
+	() => import('./nodes/22'),
+	() => import('./nodes/23'),
+	() => import('./nodes/24')];
 
 			export const server_loads = [];
 
@@ -21,13 +33,25 @@ export { matchers } from './client-matchers.js';
 	"about": [3],
 	"web-projects": [4],
 	"web-projects/adge": [5],
-	"web-projects/platinum": [6],
-	"web-projects/platzner": [7],
-	"web-projects/rejuvenation-site": [8],
-	"web-projects/satsukiina": [9],
-	"web-projects/serpentvenom": [10],
-	"web-projects/smcta": [11],
-	"web-projects/urban-forest": [12]
+	"web-projects/autodesk": [7],
+	"web-projects/corelight": [8],
+	"web-projects/credit-karma": [9],
+	"web-projects/molekule": [10],
+	"web-projects/platinum": [11],
+	"web-projects/platzner": [13],
+	"web-projects/rejuvenation-site": [15],
+	"web-projects/satsukiina": [17],
+	"web-projects/serpentvenom": [19],
+	"web-projects/smcta": [21],
+	"web-projects/urban-forest": [23],
+	"web-projects/adge/images": [6],
+	"web-projects/platinum/images": [12],
+	"web-projects/platzner/images": [14],
+	"web-projects/rejuvenation-site/images": [16],
+	"web-projects/satsukiina/images": [18],
+	"web-projects/serpentvenom/images": [20],
+	"web-projects/smcta/images": [22],
+	"web-projects/urban-forest/images": [24]
 };
 
 			export const hooks = {

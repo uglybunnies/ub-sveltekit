@@ -11,6 +11,7 @@
   export let maxWidth;
   export let mobileTop;
   export let mobileLeft;
+  export let staticImgUrl;
 
   function flipCard(event) {
     let target = event.target;
@@ -35,7 +36,9 @@
 >
   <div class="content">
     <div class="front">
-      <img {src} {alt} />
+      <a href="{staticImgUrl}" on:click|preventDefault>
+        <img {src} {alt} />
+      </a>
     </div>
     <div class="back">
       <div class="image">

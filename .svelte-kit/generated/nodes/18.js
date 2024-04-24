@@ -1,0 +1,1 @@
+export { default as component } from "../../../src/routes/web-projects/satsukiina/images/+page.svelte";

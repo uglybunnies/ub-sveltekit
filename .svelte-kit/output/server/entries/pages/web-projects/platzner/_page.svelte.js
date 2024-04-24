@@ -15,7 +15,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "-1%",
         cardHeightRatio: "1.18124",
         cardWidth: "16rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/platzner/images#pic1"
       },
       {
         src: "/assets/web-projects/platznerBlogMockup.png",
@@ -29,7 +30,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "55%",
         cardHeightRatio: "1.023444545",
         cardWidth: "14rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/platzner/images#pic2"
       },
       {
         src: "/assets/web-projects/platzner-wallpaper.png",
@@ -43,7 +45,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "35%",
         cardHeightRatio: "0.703125",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/platzner/images#pic3"
       },
       {
         src: "/assets/web-projects/platzner-widgets.png",
@@ -57,7 +60,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "5%",
         cardHeightRatio: "0.703125",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/platzner/images#pic4"
       },
       {
         src: "/assets/web-projects/platzner-full-homepage-detail1.png",
@@ -71,7 +75,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "45%",
         cardHeightRatio: "0.61767358",
         cardWidth: "15rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/platzner/images#pic5"
       },
       {
         src: "/assets/web-projects/platznerContentMockup.png",
@@ -85,7 +90,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "15%",
         cardHeightRatio: "0.634034767",
         cardWidth: "16rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/platzner/images#pic6"
       }
     ],
     copy: [
@@ -95,7 +101,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   } } = $$props;
   if ($$props.captionBoxData === void 0 && $$bindings.captionBoxData && captionBoxData !== void 0)
     $$bindings.captionBoxData(captionBoxData);
-  return `${$$result.head += `${$$result.title = `<title>Ugly Bunnies\u2014Proposed Platzner &amp; Co. Website</title>`, ""}`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-7hhoj8_START -->${$$result.title = `<title>Ugly Bunnies\u2014Proposed Platzner &amp; Co. Website</title>`, ""}<!-- HEAD_svelte-7hhoj8_END -->`, ""}
 <article class="${"project"}"><header><h2>Proposed Platzner &amp; Co. Website</h2>
     <p>This is the first project I have done that takes design cues from a specific style of design; <a href="${"https://en.wikipedia.org/wiki/Art_Deco"}">Art Deco</a>. Platzner and Co. was a small marketing consultancy that requested a website design that incorporated Art Deco style. The client declared that the resulting design looked too &quot;techy&quot; and chose to go in a different direction after paying for services rendered.</p></header>
   <section class="${"design"}"><header><h3>The Design</h3></header>

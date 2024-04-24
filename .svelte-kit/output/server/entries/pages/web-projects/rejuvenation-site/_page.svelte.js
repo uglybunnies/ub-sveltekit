@@ -16,7 +16,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileTilt: "3",
         cardHeightRatio: "1",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/rejuvenation-site/images#pic1"
       },
       {
         src: "/assets/web-projects/RJM_services.png",
@@ -31,7 +32,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileTilt: "3",
         cardHeightRatio: "1",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/rejuvenation-site/images#pic2"
       },
       {
         src: "/assets/web-projects/RJM_staff.png",
@@ -46,7 +48,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileTilt: "3",
         cardHeightRatio: "1",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/rejuvenation-site/images#pic3"
       },
       {
         src: "/assets/web-projects/rjm_home_detail1.png",
@@ -61,7 +64,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileTilt: "50",
         cardHeightRatio: "0.61875",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/rejuvenation-site/images#pic4"
       },
       {
         src: "/assets/web-projects/rjm_home_detail2.png",
@@ -76,7 +80,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileTilt: "3",
         cardHeightRatio: "0.61875",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/rejuvenation-site/images#pic5"
       }
     ],
     copy: [
@@ -86,7 +91,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   } } = $$props;
   if ($$props.captionBoxData === void 0 && $$bindings.captionBoxData && captionBoxData !== void 0)
     $$bindings.captionBoxData(captionBoxData);
-  return `${$$result.head += `${$$result.title = `<title>Ugly Bunnies\u2014Rejuvenation Medi-Spas Website Design</title>`, ""}`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-nqddam_START -->${$$result.title = `<title>Ugly Bunnies\u2014Rejuvenation Medi-Spas Website Design</title>`, ""}<!-- HEAD_svelte-nqddam_END -->`, ""}
 <article class="${"project"}"><header><h2>Rejuvenation Medi-Spas</h2>
     <p>This site was the second created in collaboration with my colleague who was attempting to build a business around creating websites optimized for <a class="${"slink"}" href="${"https://en.wikipedia.org/wiki/Search_engine_optimization"}">SEO</a>. The site was never published because the client <a class="${"slink"}" href="${"https://youtu.be/jVkLVRt6c1U"}">could not pay</a> after his partners refused to go forward. This project is the the last bit of unpaid &quot;spec work&quot; I have done. Lesson learned, I no longer do projects on spec.</p></header>
   <section class="${"design"}"><header><h3>The Design</h3></header>

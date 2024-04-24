@@ -1,1 +1,1 @@
-export { default as component } from "../../../src/routes/web-projects/serpentvenom/+page.svelte";
+export { default as component } from "../../../src/routes/web-projects/molekule/+page.svelte";

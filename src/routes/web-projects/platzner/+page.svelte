@@ -14,7 +14,8 @@
         mobileLeft: '-1%',
         cardHeightRatio: '1.18124',
         cardWidth: '16rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/platzner/images#pic1'
      },
       {
         src: '/assets/web-projects/platznerBlogMockup.png',
@@ -28,7 +29,8 @@
         mobileLeft: '55%',
         cardHeightRatio: '1.023444545',
         cardWidth: '14rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/platzner/images#pic2'
      },
       {
         src: '/assets/web-projects/platzner-wallpaper.png',
@@ -42,7 +44,8 @@
         mobileLeft: '35%',
         cardHeightRatio: '0.703125',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/platzner/images#pic3'
      },
       {
         src: '/assets/web-projects/platzner-widgets.png',
@@ -56,7 +59,8 @@
         mobileLeft: '5%',
         cardHeightRatio: '0.703125',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/platzner/images#pic4'
      },
       {
         src: '/assets/web-projects/platzner-full-homepage-detail1.png',
@@ -70,7 +74,8 @@
         mobileLeft: '45%',
         cardHeightRatio: '0.61767358',
         cardWidth: '15rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/platzner/images#pic5'
      },
       {
         src: '/assets/web-projects/platznerContentMockup.png',
@@ -84,7 +89,8 @@
         mobileLeft: '15%',
         cardHeightRatio: '0.634034767',
         cardWidth: '16rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/platzner/images#pic6'
      },
     ],
     copy: [

@@ -51,7 +51,7 @@
   let row2 ={
     projects: [
       {
-        copy: 'This site was designed Platzner & Co.',
+        copy: 'This site was designed for Platzner & Co.',
         tilt: '7deg',
         top: '.5em',
         left: '1%',
@@ -99,14 +99,32 @@
   let irow1 = {
     projects: [
       {
-        copy: 'This site was designed Platzner & Co.',
-        tilt: '7deg',
+        copy: 'User interface development for the Corelight website.',
+        tilt: '-7deg',
         top: '.5em',
         left: '1%',
-        src: '/assets/web-projects/platzner-full-homepage-detail1.png',
-        alt: 'Platzner & Co. Website',
-        link: '/web-projects/platzner'
+        src: '/assets/web-projects/corelight.png',
+        alt: 'Corelight website',
+        link: '/web-projects/corelight'
       },
+      {
+        copy: 'User interace development for the Molekule e-commerce website.',
+        tilt: '5deg',
+        top: '1em',
+        left: "20%",
+        src: '/assets/web-projects/molekule.png',
+        alt: 'Molekule website',
+        link: '/web-projects/molekule'
+      },
+      {
+        copy: 'User interface development for Credit Karma.',
+        tilt: '-3deg',
+        top: '-.25em',
+        left: '40%',
+        src: '/assets/web-projects/CF-InfoTop.png',
+        alt: 'Credit Karma Credit Fumble Infographic page.',
+        link: '/web-projects/credit-karma'
+      }
     ]
   };
 </script>
@@ -116,11 +134,18 @@
 <article class="projects">
   <header>
     <h2>Web Projects</h2>
-    <p>I've been a web professional for quite a while and have done a variety of projects throughout my career. Here are some projects I've worked on.</p>
+    <p>I've been a web professional for quite a while and have done a variety of projects throughout my career. Here are some of these projects.</p>
   </header>
   <section class="sites">
+      <h3>User Interface Development</h3>
+      <p>Here are some user interface projects I developed for companies I have worked for.</p>
+      <div class="websites decorate-shift">
+        <Features {...irow1}/>
+      </div>
+  </section>
+  <section class="sites">
     <h3>Websites</h3>
-    <p>This is a collection of some the websites I designed and developed over the course of my career.</p>
+    <p>This is a collection of some websites I designed and developed over the course of my career.</p>
     <div class="websites decorate">
       <Features {...row1}/>
     </div>
@@ -128,13 +153,6 @@
       <Features {...row2}/>
     </div>
   </section>
-  <!-- <section class="sites">
-      <h3>Web Interactivity</h3>
-      <p>Here are some interactive projects that I have produced during my career.</p>
-      <div class="websites decorate">
-
-      </div>
-  </section> -->
 </article>
 
 <style>

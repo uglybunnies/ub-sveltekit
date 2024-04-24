@@ -1,0 +1,1 @@
+export { default as component } from "../../../src/routes/web-projects/rejuvenation-site/+page.svelte";

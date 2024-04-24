@@ -17,6 +17,7 @@ const ImageCaption = create_ssr_component(($$result, $$props, $$bindings, slots)
   let { maxWidth } = $$props;
   let { mobileTop } = $$props;
   let { mobileLeft } = $$props;
+  let { staticImgUrl } = $$props;
   if ($$props.src === void 0 && $$bindings.src && src !== void 0)
     $$bindings.src(src);
   if ($$props.alt === void 0 && $$bindings.alt && alt !== void 0)
@@ -41,8 +42,10 @@ const ImageCaption = create_ssr_component(($$result, $$props, $$bindings, slots)
     $$bindings.mobileTop(mobileTop);
   if ($$props.mobileLeft === void 0 && $$bindings.mobileLeft && mobileLeft !== void 0)
     $$bindings.mobileLeft(mobileLeft);
+  if ($$props.staticImgUrl === void 0 && $$bindings.staticImgUrl && staticImgUrl !== void 0)
+    $$bindings.staticImgUrl(staticImgUrl);
   $$result.css.add(css$1);
-  return `<div class="${"card"}" style="${"--top: " + escape(topOffset, true) + "; --left: " + escape(leftOffset, true) + "; --tilt: " + escape(tilt, true) + "deg; --cardHeight: " + escape(cardHeightRatio, true) + "; --cardWidth: " + escape(cardWidth, true) + "; --maxWidth: " + escape(maxWidth, true) + "; --mobileTop: " + escape(mobileTop, true) + "; --mobileLeft: " + escape(mobileLeft, true)}"><div class="${"content"}"><div class="${"front"}"><img${add_attribute("src", src, 0)}${add_attribute("alt", alt, 0)}></div>
+  return `<div class="${"card"}" style="${"--top: " + escape(topOffset, true) + "; --left: " + escape(leftOffset, true) + "; --tilt: " + escape(tilt, true) + "deg; --cardHeight: " + escape(cardHeightRatio, true) + "; --cardWidth: " + escape(cardWidth, true) + "; --maxWidth: " + escape(maxWidth, true) + "; --mobileTop: " + escape(mobileTop, true) + "; --mobileLeft: " + escape(mobileLeft, true)}"><div class="${"content"}"><div class="${"front"}"><a${add_attribute("href", staticImgUrl, 0)}><img${add_attribute("src", src, 0)}${add_attribute("alt", alt, 0)}></a></div>
     <div class="${"back"}"><div class="${"image"}"><img${add_attribute("src", src, 0)}${add_attribute("alt", alt, 0)}></div>
       <div class="${"back-copy"}"><div class="${"copy svelte-1mjis1k"}"><h3 class="${"svelte-1mjis1k"}">${escape(title)}</h3>
           <p>${escape(caption)}</p></div></div></div></div>

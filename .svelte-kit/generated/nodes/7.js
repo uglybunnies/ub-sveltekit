@@ -1,1 +1,1 @@
-export { default as component } from "../../../src/routes/web-projects/platzner/+page.svelte";
+export { default as component } from "../../../src/routes/web-projects/autodesk/+page.svelte";

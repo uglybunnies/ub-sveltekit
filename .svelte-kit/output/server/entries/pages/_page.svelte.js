@@ -76,7 +76,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     ]
   };
   $$result.css.add(css);
-  return `${$$result.head += `${$$result.title = `<title>Welcome to Ugly Bunnies</title>`, ""}`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-1ka6dl5_START -->${$$result.title = `<title>Welcome to Ugly Bunnies</title>`, ""}<!-- HEAD_svelte-1ka6dl5_END -->`, ""}
 <section class="${"home-banner decorate svelte-se87yd"}"><h2>Welcome to Ugly Bunnies<sup>*</sup></h2>
   <p>Ugly Bunnies features <a class="${"slink"}" href="${"/web-projects"}">engaging web-based experiences</a> created by Michael Wong. Michael is an artist and web professional based in the San Francisco Bay Area.</p>
   <p class="${"note"}"><strong>*</strong> If you are disappointed in not finding ugly bunnies here, perhaps you can <a class="${"slink"}" href="${"http://uglybunnies.tumblr.com/"}">seek them here</a>.</p>

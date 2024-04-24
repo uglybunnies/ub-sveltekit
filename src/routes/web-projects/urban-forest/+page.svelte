@@ -14,7 +14,8 @@
         mobileLeft: '-1%',
         cardHeightRatio: '0.6175',
         cardWidth: '16rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/urban-forest/images#pic1'
      },
       {
         src: '/assets/web-projects/UF_detail4.png',
@@ -28,7 +29,8 @@
         mobileLeft: '25%',
         cardHeightRatio: '1.024324324',
         cardWidth: '16rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/urban-forest/images#pic2'
      },
       {
         src: '/assets/web-projects/UF_detail5.png',
@@ -42,7 +44,8 @@
         mobileLeft: '44%',
         cardHeightRatio: '1.02442',
         cardWidth: '16rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/urban-forest/images#pic3'
      },
       {
         src: '/assets/web-projects/UF_detail6.png',
@@ -56,7 +59,8 @@
         mobileLeft: '55%',
         cardHeightRatio: '1.02432',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/urban-forest/images#pic4'
      },
     ],
     copy: [

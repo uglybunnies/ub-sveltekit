@@ -14,7 +14,8 @@
         mobileLeft: '-1%',
         cardHeightRatio: '0.9575',
         cardWidth: '16rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/smcta/images#pic1'
      },
       {
         src: '/assets/web-projects/smcta-content-page.png',
@@ -28,7 +29,8 @@
         mobileLeft: '25%',
         cardHeightRatio: '0.9575',
         cardWidth: '16rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/smcta/images#pic2'
      },
       {
         src: '/assets/web-projects/smcta-live-homepage.png',
@@ -42,7 +44,8 @@
         mobileLeft: '55%',
         cardHeightRatio: '0.92396',
         cardWidth: '16rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/smcta/images#pic3'
      },
       {
         src: '/assets/web-projects/smcta-homepage-detail.png',
@@ -56,7 +59,8 @@
         mobileLeft: '50%',
         cardHeightRatio: '0.61875',
         cardWidth: '16rem',
-        maxWidth: '42rem'
+        maxWidth: '42rem',
+        staticImgUrl: '/web-projects/smcta/images#pic4'
      },
       {
         src: '/assets/web-projects/smcta-nav-detail.png',
@@ -70,7 +74,8 @@
         mobileLeft: '5%',
         cardHeightRatio: '0.619130435',
         cardWidth: '14rem',
-        maxWidth: '38rem'
+        maxWidth: '38rem',
+        staticImgUrl: '/web-projects/smcta/images#pic4'
      },
     ],
     copy: [

@@ -15,7 +15,8 @@
         mobileTilt: '3',
         cardHeightRatio: '1',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/rejuvenation-site/images#pic1'
       },
       {
         src: '/assets/web-projects/RJM_services.png',
@@ -30,7 +31,8 @@
         mobileTilt: '3',
         cardHeightRatio: '1',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/rejuvenation-site/images#pic2'
       },
       {
         src: '/assets/web-projects/RJM_staff.png',
@@ -45,7 +47,8 @@
         mobileTilt: '3',
         cardHeightRatio: '1',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/rejuvenation-site/images#pic3'
       },
       {
         src: '/assets/web-projects/rjm_home_detail1.png',
@@ -60,7 +63,8 @@
         mobileTilt: '50',
         cardHeightRatio: '0.61875',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/rejuvenation-site/images#pic4'
       },
       {
         src: '/assets/web-projects/rjm_home_detail2.png',
@@ -75,7 +79,8 @@
         mobileTilt: '3',
         cardHeightRatio: '0.61875',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/rejuvenation-site/images#pic5'
       },
     ],
     copy: [

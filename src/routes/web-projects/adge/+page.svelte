@@ -14,7 +14,8 @@
         mobileLeft: '-1%',
         cardHeightRatio: '1',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/adge/images#pic1'
       },
       {
         src: '/assets/web-projects/adge_detail5.png',
@@ -28,7 +29,8 @@
         mobileLeft: '20%',
         cardHeightRatio: '1',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/adge/images#pic2'
      },
       {
         src: '/assets/web-projects/adge_detail1.png',
@@ -42,7 +44,8 @@
         mobileLeft: '40%',
         cardHeightRatio: '0.61875',
         cardWidth: '14rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/adge/images#pic3'
      },
       {
         src: '/assets/web-projects/adge_detail6.png',
@@ -56,7 +59,8 @@
         mobileLeft: '60%',
         cardHeightRatio: '0.61875',
         cardWidth: '14rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/adge/images#pic4'
      },
     ],
     copy: [

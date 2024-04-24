@@ -1,17 +1,17 @@
 import { c as create_ssr_component } from "../../../chunks/index.js";
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `${$$result.head += `${$$result.title = `<title>About Ugly Bunnies</title>`, ""}`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-1bvicb5_START -->${$$result.title = `<title>About Ugly Bunnies</title>`, ""}<!-- HEAD_svelte-1bvicb5_END -->`, ""}
 <article class="${"about"}"><h2>About Ugly Bunnies</h2>
-  <p>Ugly Bunnies is my personal website featuring my web projects portfolio. Soon it will include my art portfolio and other musings on web design and development.</p>
+  <p>Ugly Bunnies is my personal website featuring my web projects portfolio. Soon it will include my art portfolio and perhaps other musings on web design and development.</p>
 
   <h3>Origins</h3>
-  <p>Before Ugly Bunnies there was SerpentVenom, my previous site. I decided to let go of SerpentVenom a while ago and set out to build a new site. The name came about very serendipitously while I was teaching my class about how to search for available domains. I decided to look for uglybunnies.com and lo and behold, it was available.</p>
+  <p>Before Ugly Bunnies there was SerpentVenom, my previous site. I decided to let go of SerpentVenom a while ago and set out to build a new site. The name came about very serendipitously while I was teaching my web design class about how to search for available web domains. I decided to look for uglybunnies.com and lo and behold, it was available.</p>
 
   <h3>Technical Information</h3>
-  <p>Ugly Bunnies was designed and developed with standards in mind. The structure of the site is written in HTML5. Modern CSS is used to implement the layout and visual design. The site was built with the <a href="${"https://kit.svelte.dev/"}">SvelteKit</a> JavaScript framework.</p>
+  <p>Ugly Bunnies was designed and developed with standards in mind. The structure of the site is written in HTML5. Modern CSS is used to implement the layout, visual design and transitions. The site was built with the <a href="${"https://kit.svelte.dev/"}">SvelteKit</a> JavaScript framework to produce a static site. JavasScript is used as an enhancement but is not required to access all content in the site. Special attention has been paid to ensure that the site is fully accessible and search engine friendly.</p>
 
   <h3>About Michael</h3>
-  <p>As for me, I&#39;m Michael Wong. I&#39;m a Web Designer/Developer by trade but an artist at heart. I have designed or contributed to a wide variety of web projects across a wide range of industries including sports, softeware, financial technology, non-profits, and the federal government. I have also created  sites for individual clients like small business websites, WordPress sites and blogs, and also custom portfolios.</p>
+  <p>As for me, I&#39;m Michael Wong. I&#39;m a Web Designer/Developer by trade but an artist at heart. I have designed or contributed to a wide variety of web projects across a broad range of industries including sports, software, financial technology, non-profit, and government. I have also created sites for individual clients including small business websites, WordPress sites and blogs, and custom portfolios.</p>
 
   <h4>Art</h4>
   <p>I studied Conceptual/Information Arts (CIA), a program within the Art Department at San Francisco State University (SFSU). CIA focuses on preparing artists and media experimenters to work at the cutting edge of technology. The study of contemporary digital production skills is accompanied by the analysis of the cultural context of technology, as well as experimentation with newly emerging technologies.</p>

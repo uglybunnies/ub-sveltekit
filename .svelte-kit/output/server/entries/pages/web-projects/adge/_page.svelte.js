@@ -15,7 +15,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "-1%",
         cardHeightRatio: "1",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/adge/images#pic1"
       },
       {
         src: "/assets/web-projects/adge_detail5.png",
@@ -29,7 +30,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "20%",
         cardHeightRatio: "1",
         cardWidth: "16rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/adge/images#pic2"
       },
       {
         src: "/assets/web-projects/adge_detail1.png",
@@ -43,7 +45,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "40%",
         cardHeightRatio: "0.61875",
         cardWidth: "14rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/adge/images#pic3"
       },
       {
         src: "/assets/web-projects/adge_detail6.png",
@@ -57,7 +60,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "60%",
         cardHeightRatio: "0.61875",
         cardWidth: "14rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/adge/images#pic4"
       }
     ],
     copy: [
@@ -67,7 +71,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   } } = $$props;
   if ($$props.captionBoxData === void 0 && $$bindings.captionBoxData && captionBoxData !== void 0)
     $$bindings.captionBoxData(captionBoxData);
-  return `${$$result.head += `${$$result.title = `<title>Ugly Bunnies\u2014Adge IT Consultants</title>`, ""}`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-14bwov0_START -->${$$result.title = `<title>Ugly Bunnies\u2014Adge IT Consultants</title>`, ""}<!-- HEAD_svelte-14bwov0_END -->`, ""}
 <article class="${"project"}"><header><h2>Adge IT Consultants</h2>
     <p>This project became my first experience with spec work. These comps were produced in the hope that they would seal the deal in getting my contract signed. Unfortunately, the client chose to go in another direction and walked away. Click on each screenshot to enlarge them.</p></header>
   <section class="${"design"}"><header><h3>The Design</h3></header>

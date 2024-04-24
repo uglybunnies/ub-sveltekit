@@ -6,12 +6,11 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     <li><a href="${"/about"}">About</a></li></ul></nav>
 <main>${slots.default ? slots.default({}) : ``}</main>
 <footer class="${"siteFooter"}"><section class="${"social-links"}"><ul><li><a href="${"https://www.linkedin.com/in/uglybunnies/"}" class="${"icon-linkedin"}"><span>LinkedIn</span></a></li>
-      <li><a href="${"https://github.com/uglybunnies"}" class="${"icon-github"}"><span>Github</span></a></li>
-      <li><a href="${"https://twitter.com/NoUglyBunnies"}" class="${"icon-twitter"}"><span>Twitter</span></a></li></ul></section>
+      <li><a href="${"https://github.com/uglybunnies"}" class="${"icon-github"}"><span>Github</span></a></li></ul></section>
   <ul class="${"footerMenu"}"><li><a class="${"slink"}" href="${"/"}">Home</a></li>
     <li><a class="${"slink"}" href="${"/web-projects"}">Web Projects</a></li>
     <li><a class="${"slink"}" href="${"/about"}">About Ugly Bunnies</a></li></ul>
-  <p class="${"note"}">Copyright \xA9 2001-2022 Michael Wong. All Rights Reserved.</p></footer>`;
+  <p class="${"note"}">\xA92024 Michael Wong</p></footer>`;
 });
 export {
   Layout as default

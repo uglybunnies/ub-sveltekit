@@ -15,7 +15,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "-1%",
         cardHeightRatio: "0.909375",
         cardWidth: "16rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/satsukiina/images#pic1"
       },
       {
         src: "/assets/web-projects/satsuki-topnav-desktop.png",
@@ -29,7 +30,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "20%",
         cardHeightRatio: "0.692969",
         cardWidth: "18rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/satsukiina/images#pic2"
       },
       {
         src: "/assets/web-projects/satsuki-home-footer.png",
@@ -43,7 +45,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "40%",
         cardHeightRatio: "0.6515625",
         cardWidth: "18rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/satsukiina/images#pic3"
       },
       {
         src: "/assets/web-projects/SatsukiMobileHome.png",
@@ -57,7 +60,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "60%",
         cardHeightRatio: "1",
         cardWidth: "15rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/satsukiina/images#pic1"
       },
       {
         src: "/assets/web-projects/satsuki-landing.png",
@@ -71,7 +75,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileLeft: "20%",
         cardHeightRatio: "0.75",
         cardWidth: "18rem",
-        maxWidth: "48rem"
+        maxWidth: "48rem",
+        staticImgUrl: "/web-projects/satsukiina/images#pic4"
       },
       {
         src: "/assets/web-projects/satsuki-mob-topnav.png",
@@ -86,7 +91,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         mobileTilt: "-3",
         cardHeightRatio: "1",
         cardWidth: "15rem",
-        maxWidth: "40rem"
+        maxWidth: "40rem",
+        staticImgUrl: "/web-projects/satsukiina/images#pic4"
       }
     ],
     copy: [
@@ -96,7 +102,7 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   } } = $$props;
   if ($$props.captionBoxData === void 0 && $$bindings.captionBoxData && captionBoxData !== void 0)
     $$bindings.captionBoxData(captionBoxData);
-  return `${$$result.head += `${$$result.title = `<title>Ugly Bunnies\u2014Satsuki Ina Website Design Overview</title>`, ""}`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-1w9mdh6_START -->${$$result.title = `<title>Ugly Bunnies\u2014Satsuki Ina Website Design Overview</title>`, ""}<!-- HEAD_svelte-1w9mdh6_END -->`, ""}
 <article class="${"project"}"><header><h2>Satsuki Ina Website</h2>
     <p>This freelance project was a complete redesign of an existing site for the writer and activist; Satsuki Ina. The focus of the project was to replace a slow loading WordPress theme with a custom one that was streamlined  to be more performant. </p></header>
   <section class="${"design"}"><header><h3>The Design</h3></header>

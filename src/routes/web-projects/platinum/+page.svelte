@@ -15,7 +15,8 @@
         mobileTilt: '3',
         cardHeightRatio: '1.16016',
         cardWidth: '16rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/platinum/images#pic1'
       },
       {
         src: '/assets/web-projects/platinum_home_detail1.png',
@@ -30,7 +31,8 @@
         mobileTilt: '3',
         cardHeightRatio: '0.609375',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/platinum/images#pic2'
       },
       {
         src: '/assets/web-projects/platinum_hero.png',
@@ -45,7 +47,8 @@
         mobileTilt: '3',
         cardHeightRatio: '0.61875',
         cardWidth: '16rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/platinum/images#pic3'
       },
       {
         src: '/assets/web-projects/platinum_services.png',
@@ -60,7 +63,8 @@
         mobileTilt: '3',
         cardHeightRatio: '0.80859375',
         cardWidth: '16rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/platinum/images#pic4'
       },
       {
         src: '/assets/web-projects/platinum_home_detail2.png',
@@ -75,7 +79,8 @@
         mobileTilt: '50',
         cardHeightRatio: '0.61875',
         cardWidth: '14rem',
-        maxWidth: '40rem'
+        maxWidth: '40rem',
+        staticImgUrl: '/web-projects/platinum/images#pic5'
       },
       {
         src: '/assets/web-projects/platinum-contact.png',
@@ -90,7 +95,8 @@
         mobileTilt: '3',
         cardHeightRatio: '0.78711',
         cardWidth: '14rem',
-        maxWidth: '48rem'
+        maxWidth: '48rem',
+        staticImgUrl: '/web-projects/platinum/images#pic6'
       },
     ],
     copy: [
